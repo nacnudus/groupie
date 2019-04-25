@@ -6,12 +6,22 @@ Authors@R:
            family = "Garmonsway",
            role = c("aut", "cre"),
            email = "nacnudus@gmail.com")
-Description: The groupie package extends `dplyr::group_map()` and others to work
-    with combinations of grouping variables.
+Description: The groupie package extends `dplyr::group_map()`
+    and others to work with combinations of grouping variables.
 License: MIT + file LICENSE
+URL: https://github.com/nacnudus/groupie
+BugReports: https://github.com/nacnudus/groupie/issues
+Depends: 
+    R (>= 3.1)
+Imports: 
+    dplyr (>= 0.8.0.1),
+    magrittr (>= 1.5)
 Suggests:
-    testthat
+    covr (>= 3.1.0),
+    testthat (>= 2.0.1),
+    spelling
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
+Language: en-US

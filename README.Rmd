@@ -17,6 +17,9 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/groupie)](https://cran.r-project.org/package=groupie)
+[![Travis build status](https://travis-ci.org/nacnudus/groupie.svg?branch=master)](https://travis-ci.org/nacnudus/groupie)
+[![Codecov test coverage](https://codecov.io/gh/nacnudus/groupie/branch/master/graph/badge.svg)](https://codecov.io/gh/nacnudus/groupie?branch=master)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/nacnudus/groupie?branch=master&svg=true)](https://ci.appveyor.com/project/nacnudus/groupie)
 <!-- badges: end -->
 
 The groupie package extends `dplyr::group_map()` and others to work with sets of

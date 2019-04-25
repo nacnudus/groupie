@@ -4,3 +4,10 @@
 ^README\.Rmd$
 ^cran-comments\.md$
 ^\.github$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.travis\.yml$
+^codecov\.yml$
+^\.covrignore$
+^appveyor\.yml$
