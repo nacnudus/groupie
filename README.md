@@ -28,16 +28,14 @@ sets of groups individually or in combinations.
 
 ## Installation
 
-You can install the released version of groupie from
-[CRAN](https://CRAN.R-project.org) with:
+You can install the development version of groupie from github with
 
 ``` r
-install.packages("groupie")
+# install.packages("remotes") # if not already installed
+remotes::install_github("nacnudus/groupie")
 ```
 
 ## Example
-
-This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(groupie)
