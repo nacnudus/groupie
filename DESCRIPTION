@@ -1,0 +1,17 @@
+Package: groupie
+Title: Map Functions to Grouped Data Frames
+Version: 0.0.0.9000
+Authors@R:
+    person(given = "Duncan",
+           family = "Garmonsway",
+           role = c("aut", "cre"),
+           email = "nacnudus@gmail.com")
+Description: The groupie package extends `dplyr::group_map()` and others to work
+    with combinations of grouping variables.
+License: MIT + file LICENSE
+Suggests:
+    testthat
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
