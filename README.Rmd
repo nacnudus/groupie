@@ -22,14 +22,9 @@ knitr::opts_chunk$set(
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/nacnudus/groupie?branch=master&svg=true)](https://ci.appveyor.com/project/nacnudus/groupie)
 <!-- badges: end -->
 
-The groupie package extends `dplyr::group_map()` and others to work with sets of
-groups individually or in combinations.
-
-* `groups_map()`
-* `groups_walk()`
-* `groups_nest()`
-* `groups_split()`
-* `groups_map()`
+The groupie package provides `groups_split()` to create copies of a data frame
+with different combinations of grouping variables.  This is useful for
+summarising data several ways in one go.
 
 ## Installation
 
@@ -42,9 +37,42 @@ remotes::install_github("nacnudus/groupie")
 
 ## Example
 
-```{r example}
+```{r library}
 library(groupie)
-## basic example code
+
+library(dplyr)
+library(purrr)
+```
+
+Summarise by
+
+* `cyl`
+* `cyl` and `am`
+* `cyl`, `am` and `mpg`
+
+```{r hierarchy}
+mtcars %>%
+  group_by(cyl, am, gear) %>%
+  groups_split(hierarchy) %>%
+  map(summarise, mpg = mean(mpg))
+```
+
+Summarise by each one of `cyl`, `am` and `mpg`.
+
+```{r k_combinations_1}
+mtcars %>%
+  group_by(cyl, am, gear) %>%
+  groups_split(k_combinations, 1L) %>%
+  map(summarise, mpg = mean(mpg))
+```
+
+Summarise by all pairs of `cyl`, `am` and `mpg`.
+
+```{r k_combinations_2}
+mtcars %>%
+  group_by(cyl, am, gear) %>%
+  groups_split(k_combinations, 2L) %>%
+  map(summarise, mpg = mean(mpg))
 ```
 
 ## Contribute

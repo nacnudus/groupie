@@ -6,14 +6,15 @@ Authors@R:
            family = "Garmonsway",
            role = c("aut", "cre"),
            email = "nacnudus@gmail.com")
-Description: The groupie package extends `dplyr::group_map()`
-    and others to work with combinations of grouping variables.
+Description: The groupie package provides `groups_split()` to create copies of a
+    data frame with different combinations of grouping variables.  This is
+    useful for summarising data several ways in one go.
 License: MIT + file LICENSE
 URL: https://github.com/nacnudus/groupie
 BugReports: https://github.com/nacnudus/groupie/issues
-Depends: 
+Depends:
     R (>= 3.1)
-Imports: 
+Imports:
     dplyr (>= 0.8.0.1),
     magrittr (>= 1.5),
     tibble,
