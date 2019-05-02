@@ -6,8 +6,9 @@
 \alias{groupie-package}
 \title{groupie: Map Functions to Grouped Data Frames}
 \description{
-The groupie package extends `dplyr::group_map()`
-    and others to work with combinations of grouping variables.
+The groupie package provides `groups_split()` to create copies of a
+    data frame with different combinations of grouping variables.  This is
+    useful for summarising data several ways in one go.
 }
 \seealso{
 Useful links:
