@@ -11,6 +11,10 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+library(dplyr)
+library(purrr)
+library(groupie)
 ```
 # groupie
 
@@ -25,6 +29,31 @@ knitr::opts_chunk$set(
 The groupie package provides `groups_split()` to create copies of a data frame
 with different combinations of grouping variables.  This is useful for
 summarising data several ways in one go.
+
+## Caveat
+
+This package is almost certainly overkill.  You can easily implement the
+functions yourself.
+
+The trick is to treat sets of grouping variables as 'data', map over them to
+create copies of your actual data grouped by each set of variables, and then map
+again with a `summarise()` function or whatever.
+
+```{r}
+library(dplyr)
+library(purrr)
+
+grouping_vars <- c("vs", "am", "carb")
+map(grouping_vars, group_by_at, .tbl = mtcars) %>%
+  map(summarise,
+      '6 cylinder' = sum(cyl == 6),
+      'Large disp' = sum(disp >= 100),
+      'low gears' = sum(gear <= 4))
+```
+
+This package also wraps the
+[arrangements](https://cran.r-project.org/package=arrangements) package to
+create sets of grouping variables.  This again is very simple to do yourself.
 
 ## Installation
 
