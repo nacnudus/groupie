@@ -1,5 +1,3 @@
-library(tidyverse)
-
 #' Split data frame by sets of groups
 #'
 #' @param .tbl A grouped tibble
