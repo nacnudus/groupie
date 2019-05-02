@@ -47,6 +47,17 @@ library(purrr)
 Summarise by
 
 * `cyl`
+* `am`
+* `mpg`
+
+```{r individuals}
+mtcars %>%
+  group_by(cyl, am, gear) %>%
+  groups_split(individuals) %>%
+  map(summarise, mpg = mean(mpg))
+```
+
+* `cyl`
 * `cyl` and `am`
 * `cyl`, `am` and `mpg`
 

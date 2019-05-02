@@ -34,6 +34,21 @@ all_combinations <- function(v) {
   purrr::flatten(purrr::map2(list(v), seq_along(v), k_combinations))
 }
 
+#' Individual items from a vector
+#'
+#' For use with [groups_split()].  Shorthand for `k_combinations(v, k = 1)`.
+#' Longhand for `as.list(v)`.
+#'
+#' @inheritParams arrangements::combinations
+#' @export
+#' @examples
+#' v <- LETTERS[1:3]
+#'
+#' individuals(v)
+individuals <- function(v) {
+  as.list(v)
+}
+
 #' First one then first two then first three and so on
 #'
 #' See the example.

@@ -36,18 +36,45 @@ remotes::install_github("nacnudus/groupie")
 library(groupie)
 
 library(dplyr)
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
 library(purrr)
 ```
 
 Summarise by
+
+  - `cyl`
+  - `am`
+  - `mpg`
+
+<!-- end list -->
+
+``` r
+mtcars %>%
+  group_by(cyl, am, gear) %>%
+  groups_split(individuals) %>%
+  map(summarise, mpg = mean(mpg))
+#> [[1]]
+#> # A tibble: 3 x 2
+#>     cyl   mpg
+#>   <dbl> <dbl>
+#> 1     4  26.7
+#> 2     6  19.7
+#> 3     8  15.1
+#> 
+#> [[2]]
+#> # A tibble: 2 x 2
+#>      am   mpg
+#>   <dbl> <dbl>
+#> 1     0  17.1
+#> 2     1  24.4
+#> 
+#> [[3]]
+#> # A tibble: 3 x 2
+#>    gear   mpg
+#>   <dbl> <dbl>
+#> 1     3  16.1
+#> 2     4  24.5
+#> 3     5  21.4
+```
 
   - `cyl`
   - `cyl` and `am`
